@@ -191,16 +191,16 @@ def route_after_search(state: GraphState) -> str:
 def build_graph() -> StateGraph:
     graph = StateGraph(GraphState)
 
-    graph.add_node("patient_profile",   patient_profile_agent)
-    graph.add_node("trial_search",      trial_search_agent)
-    graph.add_node("trial_evaluation",  trial_evaluation_node)
-    graph.add_node("ranking",           ranking_node)
-    graph.add_node("report_generation", report_generation_node)
+    graph.add_node("extract_profile",    patient_profile_agent)
+    graph.add_node("trial_search",       trial_search_agent)
+    graph.add_node("trial_evaluation",   trial_evaluation_node)
+    graph.add_node("ranking",            ranking_node)
+    graph.add_node("report_generation",  report_generation_node)
 
-    graph.set_entry_point("patient_profile")
+    graph.set_entry_point("extract_profile")
 
     graph.add_conditional_edges(
-        "patient_profile",
+        "extract_profile",
         route_after_profile,
         {"search": "trial_search", "end": END},
     )
