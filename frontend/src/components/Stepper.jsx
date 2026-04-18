@@ -6,8 +6,10 @@ const STEPS = [
   { icon: '📋', label: 'Reports' },
 ]
 
-export default function Stepper({ logs }) {
-  const active = Math.min(Math.floor(logs.length / 2), STEPS.length - 1)
+export default function Stepper({ logs, activeStep }) {
+  const active = activeStep !== undefined
+    ? Math.min(activeStep, STEPS.length - 1)
+    : Math.min(Math.floor((logs || []).length / 2), STEPS.length - 1)
 
   return (
     <div className="flex items-center justify-center gap-0 bg-white rounded-2xl border border-slate-100 shadow-sm px-6 py-4 mb-4">

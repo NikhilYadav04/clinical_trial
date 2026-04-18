@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { submitMatch } from './api'
+import { submitMatchStream } from './api'
 import PatientForm from './components/PatientForm'
 import Stepper     from './components/Stepper'
 import StatsBanner from './components/StatsBanner'
@@ -33,14 +33,27 @@ function EmptyState() {
   )
 }
 
-function RunningPanel({ logs }) {
+const AGENT_LABELS = [
+  'Extracting patient profile',
+  'Searching ClinicalTrials.gov',
+  'Evaluating trial eligibility',
+  'Ranking matched trials',
+  'Generating patient & physician reports',
+]
+
+function RunningPanel({ logs, activeStep, currentAgent }) {
   return (
     <div className="p-6">
-      <Stepper logs={logs} />
+      <Stepper activeStep={activeStep} />
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
         <div className="px-4 py-3 border-b border-slate-100 flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span className="text-xs font-semibold text-slate-600 uppercase tracking-wide">Pipeline Running</span>
+          {currentAgent && (
+            <span className="ml-auto text-xs text-emerald-600 font-medium truncate max-w-[200px]">
+              ⚙ {currentAgent}
+            </span>
+          )}
         </div>
         <div className="p-4 max-h-[420px] overflow-y-auto space-y-1.5">
           {logs.length === 0
@@ -114,20 +127,37 @@ function ResultsPanel({ result, logs, onReset }) {
 }
 
 export default function App() {
-  const [phase,  setPhase]  = useState('form')
-  const [logs,   setLogs]   = useState([])
-  const [result, setResult] = useState(null)
-  const [errMsg, setErrMsg] = useState('')
+  const [phase,        setPhase]        = useState('form')
+  const [logs,         setLogs]         = useState([])
+  const [activeStep,   setActiveStep]   = useState(0)
+  const [currentAgent, setCurrentAgent] = useState('')
+  const [result,       setResult]       = useState(null)
+  const [errMsg,       setErrMsg]       = useState('')
 
   async function handleSubmit(form) {
     setPhase('running')
     setLogs([])
+    setActiveStep(0)
+    setCurrentAgent(AGENT_LABELS[0])
     setResult(null)
     try {
-      const data = await submitMatch(form)
-      setLogs(data.log || [])
-      setResult(data)
-      setPhase('results')
+      await submitMatchStream(form, {
+        onStep: (evt) => {
+          setActiveStep(evt.step)
+          setCurrentAgent(evt.label)
+        },
+        onLog: (evt) => {
+          setLogs(prev => [...prev, evt.message])
+        },
+        onResult: (data) => {
+          setResult(data)
+          setPhase('results')
+        },
+        onError: (err) => {
+          setErrMsg(err.message)
+          setPhase('error')
+        },
+      })
     } catch (e) {
       setErrMsg(e.message)
       setPhase('error')
@@ -163,7 +193,7 @@ export default function App() {
       {/* Right column: results */}
       <div className="flex-1 overflow-y-auto">
         {phase === 'form'    && <EmptyState />}
-        {phase === 'running' && <RunningPanel logs={logs} />}
+        {phase === 'running' && <RunningPanel logs={logs} activeStep={activeStep} currentAgent={currentAgent} />}
         {phase === 'results' && <ResultsPanel result={result} logs={logs} onReset={handleReset} />}
         {phase === 'error'   && (
           <div className="p-6">
