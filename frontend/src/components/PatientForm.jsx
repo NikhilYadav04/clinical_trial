@@ -1,0 +1,323 @@
+import { useState, useEffect } from 'react'
+import { getExamples } from '../api'
+
+const DEFAULTS = {
+  age: '', sex: 'Female', ecog: 1,
+  diagnosis: '', stage: '', biomarkers: '',
+  prior_treatments: '', current_medications: '', comorbidities: '',
+  labs: [],
+  location: '', max_travel: 100, travel_unit: 'miles', phases: [],
+}
+
+const ECOG_OPTIONS = [
+  { value: 0, label: '0 — Fully active' },
+  { value: 1, label: '1 — Restricted, ambulatory' },
+  { value: 2, label: '2 — Self-care only' },
+  { value: 3, label: '3 — Limited self-care' },
+  { value: 4, label: '4 — Completely disabled' },
+]
+
+const PHASE_OPTIONS = ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4']
+
+const DIAGNOSIS_CATEGORIES = [
+  { label: 'Lung',   chips: ['NSCLC', 'SCLC', 'Mesothelioma'] },
+  { label: 'Breast', chips: ['HER2+ Breast Cancer', 'Triple-Negative Breast Cancer', 'ER+ Breast Cancer'] },
+  { label: 'Neuro',  chips: ['Glioblastoma (GBM)', 'Glioma', 'Brain Metastases'] },
+  { label: 'GI',     chips: ['Colorectal Cancer', 'Pancreatic Cancer', 'Hepatocellular Carcinoma', 'Gastric Cancer'] },
+  { label: 'Blood',  chips: ['Multiple Myeloma', 'AML', 'CLL', 'Diffuse Large B-Cell Lymphoma'] },
+  { label: 'Other',  chips: ['Ovarian Cancer', 'Prostate Cancer', 'Renal Cell Carcinoma', 'ALS', 'Melanoma'] },
+]
+
+const STAGE_CATEGORIES = [
+  { label: 'Stage',     chips: ['Stage I', 'Stage II', 'Stage III', 'Stage IV'] },
+  { label: 'Status',    chips: ['Newly Diagnosed', 'Relapsed', 'Refractory', 'Metastatic'] },
+  { label: 'Qualifier', chips: ['Locally Advanced', 'Unresectable', 'De novo Metastatic'] },
+]
+
+const BIOMARKER_CATEGORIES = [
+  { label: 'Lung',      chips: ['EGFR exon 19 del', 'EGFR L858R', 'ALK fusion', 'ROS1 fusion', 'KRAS G12C'] },
+  { label: 'Breast',    chips: ['HER2 3+ (IHC)', 'BRCA1 mutation', 'BRCA2 mutation', 'ER positive', 'PR positive'] },
+  { label: 'Immune',    chips: ['PD-L1 >1%', 'PD-L1 >50%', 'MSI-H', 'TMB high', 'dMMR'] },
+  { label: 'Pan-cancer',chips: ['BRAF V600E', 'TP53 mutation', 'PIK3CA mutation', 'FGFR amplification'] },
+]
+
+const TREATMENT_CATEGORIES = [
+  { label: 'Chemo',    chips: ['Carboplatin', 'Paclitaxel', 'Cisplatin', 'Pemetrexed', 'Gemcitabine', 'Docetaxel'] },
+  { label: 'Immuno',   chips: ['Pembrolizumab', 'Nivolumab', 'Atezolizumab', 'Durvalumab', 'Ipilimumab'] },
+  { label: 'Targeted', chips: ['Osimertinib', 'Trastuzumab', 'Bevacizumab', 'Erlotinib', 'Olaparib'] },
+  { label: 'Other',    chips: ['Radiation', 'Surgery', 'Stem Cell Transplant', 'CAR-T'] },
+]
+
+const LAB_CATEGORIES = [
+  { label: 'Kidney', items: [{ name: 'Creatinine', unit: 'mg/dL' }, { name: 'eGFR', unit: 'mL/min' }] },
+  { label: 'Liver',  items: [{ name: 'ALT', unit: 'U/L' }, { name: 'AST', unit: 'U/L' }, { name: 'Bilirubin', unit: 'mg/dL' }, { name: 'Albumin', unit: 'g/dL' }] },
+  { label: 'Blood',  items: [{ name: 'Hemoglobin', unit: 'g/dL' }, { name: 'WBC', unit: 'K/uL' }, { name: 'Platelets', unit: 'K/uL' }, { name: 'ANC', unit: 'K/uL' }] },
+  { label: 'Markers',items: [{ name: 'LDH', unit: 'U/L' }, { name: 'CEA', unit: 'ng/mL' }, { name: 'CA-125', unit: 'U/mL' }, { name: 'PSA', unit: 'ng/mL' }] },
+]
+
+function SectionCard({ color, icon, title, subtitle, children }) {
+  const borders = { indigo: 'border-l-indigo-400', blue: 'border-l-blue-400', amber: 'border-l-amber-400', emerald: 'border-l-emerald-400', violet: 'border-l-violet-400' }
+  const icons   = { indigo: 'bg-indigo-50 text-indigo-500', blue: 'bg-blue-50 text-blue-500', amber: 'bg-amber-50 text-amber-500', emerald: 'bg-emerald-50 text-emerald-500', violet: 'bg-violet-50 text-violet-500' }
+  return (
+    <div className={`section-card border-l-4 ${borders[color]}`}>
+      <div className="section-header">
+        <div className={`section-icon ${icons[color]}`}>{icon}</div>
+        <div>
+          <div className="section-title-text">{title}</div>
+          {subtitle && <div className="section-subtitle">{subtitle}</div>}
+        </div>
+      </div>
+      <div className="space-y-3">{children}</div>
+    </div>
+  )
+}
+
+function Field({ label, hint, children }) {
+  return (
+    <div>
+      {label && <label className="label">{label}</label>}
+      {children}
+      {hint && <p className="hint">{hint}</p>}
+    </div>
+  )
+}
+
+function CategorizedChips({ categories, color, onAdd }) {
+  return (
+    <div className="mt-2 space-y-1.5 border-t border-slate-100 pt-2.5">
+      {categories.map(cat => (
+        <div key={cat.label} className="flex items-start gap-2">
+          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest w-14 flex-shrink-0 mt-1.5 text-right">{cat.label}</span>
+          <div className="flex flex-wrap gap-1">
+            {cat.chips.map(chip => (
+              <button key={chip} type="button" onClick={() => onAdd(chip)} className={`chip chip-${color}`}>
+                + {chip}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function PhaseToggle({ selected, onChange }) {
+  const toggle = p => onChange(selected.includes(p) ? selected.filter(x => x !== p) : [...selected, p])
+  return (
+    <div className="flex gap-2 flex-wrap items-center">
+      {PHASE_OPTIONS.map(p => (
+        <button key={p} type="button" onClick={() => toggle(p)}
+          className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+            selected.includes(p)
+              ? 'bg-violet-600 text-white border-violet-600 shadow-sm'
+              : 'bg-white text-slate-600 border-slate-200 hover:border-violet-400 hover:text-violet-600'
+          }`}>
+          {p}
+        </button>
+      ))}
+      {selected.length === 0 && <span className="text-[11px] text-slate-400">any phase accepted</span>}
+    </div>
+  )
+}
+
+function LabRow({ lab, index, onChange, onRemove }) {
+  return (
+    <div className="flex gap-2 items-center">
+      <input className="input input-emerald flex-1 text-xs" placeholder="Lab name" value={lab.name} onChange={e => onChange(index, 'name', e.target.value)} />
+      <input className="input input-emerald w-20 text-xs" placeholder="Value" value={lab.value} onChange={e => onChange(index, 'value', e.target.value)} />
+      <input className="input input-emerald w-20 text-xs" placeholder="Unit" value={lab.unit} onChange={e => onChange(index, 'unit', e.target.value)} />
+      <button type="button" onClick={() => onRemove(index)} className="text-slate-300 hover:text-red-400 text-lg leading-none">×</button>
+    </div>
+  )
+}
+
+function LabValuesSection({ labs, onChange }) {
+  const addLab = (name = '', unit = '') => onChange([...labs, { name, value: '', unit }])
+  const updateLab = (i, key, val) => { const next = [...labs]; next[i] = { ...next[i], [key]: val }; onChange(next) }
+  const removeLab = i => onChange(labs.filter((_, idx) => idx !== i))
+
+  return (
+    <SectionCard color="emerald" icon="🧪" title="Lab Values" subtitle="Add any recent results — helps evaluate eligibility criteria">
+      {labs.length > 0 && (
+        <div className="space-y-2">
+          <div className="grid grid-cols-[1fr_80px_80px_24px] gap-2">
+            <span className="label">Lab name</span><span className="label">Value</span><span className="label">Unit</span><span />
+          </div>
+          {labs.map((lab, i) => <LabRow key={i} lab={lab} index={i} onChange={updateLab} onRemove={removeLab} />)}
+        </div>
+      )}
+      <button type="button" onClick={() => addLab()} className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
+        <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-base leading-none">+</span>
+        Add lab value
+      </button>
+      <div className="border-t border-slate-100 pt-2.5 space-y-1.5">
+        {LAB_CATEGORIES.map(cat => (
+          <div key={cat.label} className="flex items-start gap-2">
+            <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest w-14 flex-shrink-0 mt-1.5 text-right">{cat.label}</span>
+            <div className="flex flex-wrap gap-1">
+              {cat.items.map(l => (
+                <button key={l.name} type="button" onClick={() => addLab(l.name, l.unit)} className="chip chip-emerald">+ {l.name}</button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </SectionCard>
+  )
+}
+
+function appendToField(current, addition) {
+  const val = current?.trim()
+  if (!val) return addition
+  if (val.toLowerCase().includes(addition.toLowerCase())) return val
+  return val + ', ' + addition
+}
+
+export default function PatientForm({ onSubmit, loading }) {
+  const [form, setForm] = useState(DEFAULTS)
+  const [examples, setExamples] = useState([])
+
+  useEffect(() => {
+    getExamples().then(d => setExamples(d.examples || [])).catch(() => {})
+  }, [])
+
+  const set    = key => e => setForm(f => ({ ...f, [key]: e.target.value }))
+  const setVal = (key, val) => setForm(f => ({ ...f, [key]: val }))
+  const append = key => chip => setForm(f => ({ ...f, [key]: appendToField(f[key], chip) }))
+
+  const loadExample = ex => setForm({ ...DEFAULTS, ...ex.fields, labs: ex.fields.labs || [] })
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    onSubmit({ ...form, age: Number(form.age), ecog: Number(form.ecog) })
+  }
+
+  const canSubmit = !loading && String(form.diagnosis).trim().length > 1 && form.age
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-1 pb-4">
+
+      {/* Examples */}
+      {examples.length > 0 && (
+        <div className="mb-4">
+          <p className="label mb-2">Load example patient</p>
+          <div className="flex flex-wrap gap-1.5">
+            {examples.map(ex => (
+              <button key={ex.label} type="button" onClick={() => loadExample(ex)}
+                className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600
+                           border border-slate-200 hover:bg-slate-800 hover:text-white transition-all">
+                {ex.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Demographics */}
+      <SectionCard color="indigo" icon="👤" title="Patient Demographics" subtitle="Basic patient information">
+        <div className="grid grid-cols-3 gap-2">
+          <Field label="Age *">
+            <input className="input input-indigo" type="number" min="1" max="120" placeholder="e.g. 58"
+              value={form.age} onChange={set('age')} required />
+          </Field>
+          <Field label="Sex">
+            <select className="input input-indigo" value={form.sex} onChange={set('sex')}>
+              <option>Female</option><option>Male</option><option>Other</option>
+            </select>
+          </Field>
+          <Field label="ECOG">
+            <select className="input input-indigo" value={form.ecog} onChange={e => setVal('ecog', Number(e.target.value))}>
+              {ECOG_OPTIONS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+            </select>
+          </Field>
+        </div>
+      </SectionCard>
+
+      {/* Diagnosis */}
+      <SectionCard color="blue" icon="🩺" title="Diagnosis" subtitle="Primary condition, stage, and biomarkers">
+        <Field label="Primary Condition *">
+          <input className="input input-blue" placeholder="e.g. Non-Small Cell Lung Cancer (NSCLC)"
+            value={form.diagnosis} onChange={set('diagnosis')} required />
+          <CategorizedChips categories={DIAGNOSIS_CATEGORIES} color="blue" onAdd={chip => setVal('diagnosis', chip)} />
+        </Field>
+        <div className="grid grid-cols-2 gap-2">
+          <Field label="Stage / Grade">
+            <input className="input input-blue" placeholder="e.g. Stage IIIB" value={form.stage} onChange={set('stage')} />
+            <CategorizedChips categories={STAGE_CATEGORIES} color="blue" onAdd={chip => setVal('stage', chip)} />
+          </Field>
+          <Field label="Biomarkers & Mutations" hint="Separate multiple with commas">
+            <input className="input input-blue" placeholder="e.g. EGFR exon 19 del, PD-L1 40%"
+              value={form.biomarkers} onChange={set('biomarkers')} />
+            <CategorizedChips categories={BIOMARKER_CATEGORIES} color="blue" onAdd={append('biomarkers')} />
+          </Field>
+        </div>
+      </SectionCard>
+
+      {/* Treatment History */}
+      <SectionCard color="amber" icon="💊" title="Treatment History" subtitle="Prior therapies, current drugs, and comorbidities">
+        <Field label="Prior Treatments" hint="Include drug names, cycles, and when completed">
+          <textarea className="input input-amber resize-none" rows={2}
+            placeholder="e.g. Carboplatin + Paclitaxel (6 cycles, completed 6 months ago)"
+            value={form.prior_treatments} onChange={set('prior_treatments')} />
+          <CategorizedChips categories={TREATMENT_CATEGORIES} color="amber" onAdd={append('prior_treatments')} />
+        </Field>
+        <div className="grid grid-cols-2 gap-2">
+          <Field label="Current Medications">
+            <input className="input input-amber" placeholder="e.g. Amlodipine 5mg"
+              value={form.current_medications} onChange={set('current_medications')} />
+          </Field>
+          <Field label="Comorbidities">
+            <input className="input input-amber" placeholder="e.g. Hypertension, T2 Diabetes"
+              value={form.comorbidities} onChange={set('comorbidities')} />
+          </Field>
+        </div>
+      </SectionCard>
+
+      {/* Labs */}
+      <LabValuesSection labs={form.labs} onChange={labs => setVal('labs', labs)} />
+
+      {/* Location */}
+      <SectionCard color="violet" icon="📍" title="Location & Preferences" subtitle="Used to find nearby sites and filter trial phases">
+        <Field label="Location" hint="City and state/country">
+          <input className="input input-violet" placeholder="e.g. Boston, MA  or  Mumbai, Maharashtra, India"
+            value={form.location} onChange={set('location')} />
+        </Field>
+        <div className="grid grid-cols-3 gap-2 items-end">
+          <div className="col-span-2">
+            <label className="label">
+              Max Travel — <span className="text-violet-600 font-bold normal-case tracking-normal">{form.max_travel} {form.travel_unit}</span>
+            </label>
+            <input type="range" min="0" max={form.travel_unit === 'km' ? 1000 : 500} step="25"
+              value={form.max_travel} onChange={e => setVal('max_travel', Number(e.target.value))}
+              className="w-full accent-violet-600 mt-1" />
+            <div className="flex justify-between text-[10px] text-slate-300 mt-0.5">
+              <span>0</span><span>{form.travel_unit === 'km' ? '1000 km' : '500 mi'}</span>
+            </div>
+          </div>
+          <Field label="Unit">
+            <select className="input input-violet" value={form.travel_unit} onChange={set('travel_unit')}>
+              <option value="miles">Miles</option>
+              <option value="km">Kilometres</option>
+            </select>
+          </Field>
+        </div>
+        <Field label="Preferred Trial Phases" hint="Leave blank to include all phases">
+          <PhaseToggle selected={form.phases} onChange={v => setVal('phases', v)} />
+        </Field>
+      </SectionCard>
+
+      {/* Submit */}
+      <div className="pt-3 sticky bottom-0 bg-white pb-1">
+        <button type="submit" disabled={!canSubmit} className="btn-primary">
+          {loading
+            ? <span className="flex items-center justify-center gap-2">
+                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                Running pipeline...
+              </span>
+            : '🔍  Find Matching Trials'
+          }
+        </button>
+      </div>
+    </form>
+  )
+}
