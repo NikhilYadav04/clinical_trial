@@ -1,0 +1,595 @@
+{
+  "boston, ma": [
+    42.3601,
+    -71.0589
+  ],
+  "boston, massachusetts, united states": [
+    42.3601,
+    -71.0589
+  ],
+  "la jolla, california, united states": [
+    32.8458529,
+    -117.2575702
+  ],
+  "los angeles, california, united states": [
+    34.0522,
+    -118.2437
+  ],
+  "denver, colorado, united states": [
+    39.7392,
+    -104.9903
+  ],
+  "new haven, connecticut, united states": [
+    41.3082,
+    -72.9279
+  ],
+  "washington d.c., district of columbia, united states": [
+    34.0007,
+    -81.0348
+  ],
+  "toronto, ontario, canada": [
+    43.6532,
+    -79.3832
+  ],
+  "lyon, france": [
+    45.7578137,
+    4.8320114
+  ],
+  "m\u00fcnchen, bavaria, germany": [
+    48.1371079,
+    11.5753822
+  ],
+  "fayetteville, arkansas, united states": [
+    36.0625843,
+    -94.1574328
+  ],
+  "fort smith, arkansas, united states": [
+    35.3880338,
+    -94.4265011
+  ],
+  "rogers, arkansas, united states": [
+    36.334857,
+    -94.1193816
+  ],
+  "springdale, arkansas, united states": [
+    36.1867442,
+    -94.1288142
+  ],
+  "dublin, california, united states": [
+    37.7021521,
+    -121.9357918
+  ],
+  "chandler, arizona, united states": [
+    33.3062031,
+    -111.841185
+  ],
+  "gilbert, arizona, united states": [
+    33.3527632,
+    -111.789037
+  ],
+  "goodyear, arizona, united states": [
+    33.4672279,
+    -112.3853489
+  ],
+  "duarte, california, united states": [
+    34.1394513,
+    -117.9772873
+  ],
+  "irvine, california, united states": [
+    33.6856969,
+    -117.825981
+  ],
+  "gosford, australia": [
+    -33.4250175,
+    151.3417318
+  ],
+  "graz, austria": [
+    47.0708678,
+    15.4382786
+  ],
+  "hasselt, belgium": [
+    50.9303735,
+    5.3378043
+  ],
+  "huntsville, alabama, united states": [
+    34.729847,
+    -86.5859011
+  ],
+  "phoenix, arizona, united states": [
+    33.4484,
+    -112.074
+  ],
+  "tucson, arizona, united states": [
+    32.2226,
+    -110.9747
+  ],
+  "adelaide, australia": [
+    -34.9281805,
+    138.5999312
+  ],
+  "feldkirch, austria": [
+    47.2375671,
+    9.5981724
+  ],
+  "antwerp, belgium": [
+    51.2211097,
+    4.3997081
+  ],
+  "anchorage, alaska, united states": [
+    61.2181,
+    -149.9003
+  ],
+  "fairbanks, alaska, united states": [
+    64.837845,
+    -147.716675
+  ],
+  "kingman, arizona, united states": [
+    35.1895921,
+    -114.0532996
+  ],
+  "tamuning, guam": [
+    13.4966854,
+    144.7772156
+  ],
+  "aurora, colorado, united states": [
+    39.7294,
+    -104.8319
+  ],
+  "colorado springs, colorado, united states": [
+    38.8339,
+    -104.8214
+  ],
+  "boca raton, florida, united states": [
+    26.3586885,
+    -80.0830984
+  ],
+  "savannah, georgia, united states": [
+    32.0790074,
+    -81.0921335
+  ],
+  "fitzroy, melbourne, australia": [
+    -37.8136,
+    144.9631
+  ],
+  "mississauga, canada, canada": null,
+  "middlesbrough, united kingdom": [
+    54.5760419,
+    -1.2344047
+  ],
+  "daphne, alabama, united states": [
+    30.6035255,
+    -87.9036047
+  ],
+  "golden, colorado, united states": [
+    39.7546349,
+    -105.22058
+  ],
+  "newark, delaware, united states": [
+    39.6828358,
+    -75.7515682
+  ],
+  "ocala, florida, united states": [
+    29.1871986,
+    -82.1400923
+  ],
+  "buenas aires, buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "gosford, new south wales, australia": [
+    -33.4250175,
+    151.3417318
+  ],
+  "innsbruck, austria": [
+    47.2654296,
+    11.3927685
+  ],
+  "little rock, arkansas, united states": [
+    34.7465,
+    -92.2896
+  ],
+  "burbank, california, united states": [
+    34.1812089,
+    -118.307201
+  ],
+  "glendale, arizona, united states": [
+    33.5386858,
+    -112.185994
+  ],
+  "newport beach, california, united states": [
+    33.6170092,
+    -117.9294401
+  ],
+  "orange, california, united states": [
+    33.750631,
+    -117.8722311
+  ],
+  "boulder, colorado, united states": [
+    40.0149856,
+    -105.270545
+  ],
+  "miami, florida, united states": [
+    25.7617,
+    -80.1918
+  ],
+  "rosario, santa fe province, argentina": [
+    -34.7640997,
+    -59.6817004
+  ],
+  "westmead, new south wales, australia": [
+    -33.8076498,
+    150.9877265
+  ],
+  "vienna, austria": [
+    48.2082,
+    16.3738
+  ],
+  "palo alto, california, united states": [
+    37.4443293,
+    -122.1598465
+  ],
+  "stanford, california, united states": [
+    37.4275,
+    -122.1697
+  ],
+  "ciudad autonoma buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "cerritos, california, united states": [
+    33.8644291,
+    -118.0539323
+  ],
+  "corona, california, united states": [
+    33.8752945,
+    -117.566444
+  ],
+  "genk, belgium": [
+    50.9654864,
+    5.5001456
+  ],
+  "helsinki, finland": [
+    60.1699,
+    24.9384
+  ],
+  "brest, france": [
+    48.3905283,
+    -4.4860088
+  ],
+  "new york, ny": [
+    40.7128,
+    -74.006
+  ],
+  "new york, new york, united states": [
+    40.7128,
+    -74.006
+  ],
+  "fullerton, california, united states": [
+    33.8708215,
+    -117.929416
+  ],
+  "avignon, france": [
+    43.9492493,
+    4.8059012
+  ],
+  "augsburg, germany": [
+    48.3690341,
+    10.8979522
+  ],
+  "dublin, ireland": [
+    53.3493795,
+    -6.2605593
+  ],
+  "mobile, alabama, united states": [
+    30.6913462,
+    -88.0437509
+  ],
+  "fountain valley, california, united states": [
+    33.7038145,
+    -117.9627349
+  ],
+  "los alamitos, california, united states": [
+    33.8038865,
+    -118.0772433
+  ],
+  "capital federal, buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "macquarie university, new south wales, australia": [
+    -33.774197,
+    151.1127138
+  ],
+  "innsbruck, tyrol, austria": [
+    47.2654296,
+    11.3927685
+  ],
+  "basking ridge, new jersey, united states": [
+    40.7064088,
+    -74.5492725
+  ],
+  "middletown, new jersey, united states": [
+    40.3898188,
+    -74.1162152
+  ],
+  "montvale, new jersey, united states": [
+    41.0467635,
+    -74.0229173
+  ],
+  "commack, new york, united states": [
+    40.7128,
+    -74.006
+  ],
+  "harrison, new york, united states": [
+    40.7128,
+    -74.006
+  ],
+  "grand junction, colorado, united states": [
+    39.0672568,
+    -108.56448
+  ],
+  "ciudad autonoma de buenos aires, buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "blacktown, new south wales, australia": [
+    -33.7401885,
+    150.8648355
+  ],
+  "recife, pernambuco, brazil": [
+    -8.0584933,
+    -34.8848193
+  ],
+  "antioch, california, united states": [
+    38.0093296,
+    -121.8106925
+  ],
+  "bakersfield, california, united states": [
+    35.3738712,
+    -119.019463
+  ],
+  "cameron park, california, united states": [
+    38.6781746,
+    -120.99426
+  ],
+  "san juan, puerto rico": [
+    18.465299,
+    -66.116666
+  ],
+  "anaheim, california, united states": [
+    33.8347516,
+    -117.911732
+  ],
+  "angers, france": [
+    47.4739884,
+    -0.5515588
+  ],
+  "goyang-si, gyeonggi-do, south korea": [
+    37.6581862,
+    126.8319452
+  ],
+  "madrid, agrigento, spain": [
+    40.4168,
+    -3.7038
+  ],
+  "birmingham, alabama, united states": [
+    33.5186,
+    -86.8104
+  ],
+  "bayam\u00f3n, puerto rico": [
+    18.3449582,
+    -66.168374
+  ],
+  "scottsdale, arizona, united states": [
+    33.4942189,
+    -111.926018
+  ],
+  "grand rapids, michigan, united states": [
+    42.9632425,
+    -85.6678639
+  ],
+  "mineola, new york, united states": [
+    40.7128,
+    -74.006
+  ],
+  "columbus, ohio, united states": [
+    39.9612,
+    -82.9988
+  ],
+  "milan, italy": [
+    45.4641943,
+    9.1896346
+  ],
+  "brooklyn, new york, united states": [
+    40.7128,
+    -74.006
+  ],
+  "jamaica, new york, united states": [
+    40.7128,
+    -74.006
+  ],
+  "staten island, new york, united states": [
+    40.7128,
+    -74.006
+  ],
+  "saint john, new brunswick, canada": [
+    45.2787992,
+    -66.0585188
+  ],
+  "chai wan, hong kong": [
+    22.3193,
+    114.1694
+  ],
+  "t\u014don, ehime, japan": [
+    33.7908821,
+    132.8718965
+  ],
+  "san francisco, california, united states": [
+    37.7749,
+    -122.4194
+  ],
+  "derby, connecticut, united states": [
+    41.3223611,
+    -73.0890324
+  ],
+  "fairfield, connecticut, united states": [
+    41.1412078,
+    -73.2637258
+  ],
+  "glastonbury, connecticut, united states": [
+    41.7123218,
+    -72.608146
+  ],
+  "greenwich, connecticut, united states": [
+    41.0264862,
+    -73.6284598
+  ],
+  "celebration, florida, united states": [
+    28.319057,
+    -81.5408702
+  ],
+  "atlanta, georgia, united states": [
+    33.749,
+    -84.388
+  ],
+  "dothan, alabama, united states": [
+    31.2237285,
+    -85.3934375
+  ],
+  "arcadia, california, united states": [
+    34.1362075,
+    -118.0401497
+  ],
+  "buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "sydney, australia": [
+    -33.8688,
+    151.2093
+  ],
+  "anderlecht, belgium": [
+    50.8286899,
+    4.2895569
+  ],
+  "calgary, alberta, canada": [
+    51.0447,
+    -114.0719
+  ],
+  "mumbai, maharashtra, india": [
+    19.076,
+    72.8777
+  ],
+  "eluru, andhra pradesh, india": [
+    16.7104257,
+    81.1153816
+  ],
+  "p\u016blakk\u014dd, kerala, india": [
+    10.6828068,
+    76.3627913
+  ],
+  "aurangabad, maharashtra, india": [
+    19.877263,
+    75.3390241
+  ],
+  "nagpur, maharashtra, india": [
+    21.1498134,
+    79.0820556
+  ],
+  "dwarka, national capital territory of delhi, india": [
+    28.7041,
+    77.1025
+  ],
+  "bengaluru, karnataka, india": [
+    12.9767936,
+    77.590082
+  ],
+  "thiruvananthapuram, kerala, india": [
+    8.4882267,
+    76.947551
+  ],
+  "new delhi, national capital territory of delhi, india": [
+    28.7041,
+    77.1025
+  ],
+  "secunderabad, telangana, india": [
+    17.4337246,
+    78.5006827
+  ],
+  "howrah, west bengal, india": [
+    22.5736296,
+    88.3251045
+  ],
+  "ciudad aut\u00f3noma de buenos aires, buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "caba, buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "camperdown, new south wales, australia": [
+    -33.8896116,
+    151.1800986
+  ],
+  "bangalore, karnataka, india": [
+    12.9716,
+    77.5946
+  ],
+  "hyderabad, telangana, india": [
+    17.385,
+    78.4867
+  ],
+  "varanasi, uttar pradesh, india": [
+    25.3356491,
+    83.0076292
+  ],
+  "liverpool, new south wales, australia": [
+    -33.9525886,
+    150.898844
+  ],
+  "visakhapatnam, andhra pradesh, india": [
+    17.6935526,
+    83.2921297
+  ],
+  "ahmedabad, gujarat, india": [
+    23.0225,
+    72.5714
+  ],
+  "bhubaneswar, odisha, india": [
+    20.2602964,
+    85.8394521
+  ],
+  "canberra, australian capital territory, australia": [
+    -35.2975906,
+    149.1012676
+  ],
+  "mar del plata, buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "kanwal, new south wales, australia": [
+    -33.265,
+    151.4844444
+  ],
+  "gurugram, haryana, india": [
+    28.4646148,
+    77.0299194
+  ],
+  "wilrijk, antwerpen, belgium": [
+    51.1700864,
+    4.3942577
+  ],
+  "oakland, california, united states": [
+    37.8044557,
+    -122.271356
+  ],
+  "caba., buenos aires, argentina": [
+    -34.6037,
+    -58.3816
+  ],
+  "edmonton, alberta, canada": [
+    53.5462055,
+    -113.491241
+  ]
+}

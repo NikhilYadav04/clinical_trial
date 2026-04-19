@@ -1,0 +1,1282 @@
+[
+  {
+    "nct_id": "NCT06667076",
+    "title": "A Study of Amivantamab in Combination With Lazertinib, or Amivantamab in Combination With Platinum-Based Chemotherapy, for Common Epidermal Growth Factor Receptor (EGFR)-Mutated Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+    "score": 70.2,
+    "phase": "PHASE2",
+    "sponsor": "Janssen Research & Development, LLC",
+    "url": "https://clinicaltrials.gov/study/NCT06667076",
+    "patient_context": {
+      "diagnosis": "Non-Small Cell Lung Cancer",
+      "location": "Boston, MA"
+    },
+    "trial_data": {
+      "nct_id": "NCT06667076",
+      "title": "A Study of Amivantamab in Combination With Lazertinib, or Amivantamab in Combination With Platinum-Based Chemotherapy, for Common Epidermal Growth Factor Receptor (EGFR)-Mutated Locally Advanced or Metastatic Non-Small Cell Lung Cancer (NSCLC)",
+      "phase": "PHASE2",
+      "sponsor": "Janssen Research & Development, LLC",
+      "status": "RECRUITING",
+      "url": "https://clinicaltrials.gov/study/NCT06667076",
+      "brief_summary": "The primary purpose of the study is to assess how well amivantamab in combination with lazertinib or in combination with chemotherapy works (antitumor activity) in participants with epidermal growth factor receptor mutated (EGFRm) non-small cell lung cancer (NSCLC; that is one of the major types of lung cancer).",
+      "locations": [
+        {
+          "facility": "Southern Cancer Center, PC",
+          "city": "Daphne",
+          "state": "Alabama",
+          "country": "United States"
+        },
+        {
+          "facility": "Clearview Cancer Institute",
+          "city": "Huntsville",
+          "state": "Alabama",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Phoenix",
+          "city": "Goodyear",
+          "state": "Arizona",
+          "country": "United States"
+        },
+        {
+          "facility": "The Oncology Institute of Hope and Innovation",
+          "city": "Cerritos",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Corona",
+          "city": "Corona",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope",
+          "city": "Duarte",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Providence Medical Foundation",
+          "city": "Fullerton",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Oncology Physicians Network Healthcare",
+          "city": "Glendale",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Los Angeles Cancer Network",
+          "city": "Glendale",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Glendale Adventist Medical Center",
+          "city": "Glendale",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Marin Cancer Center",
+          "city": "Greenbrae",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Seacliff",
+          "city": "Huntington Beach",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Orange County Lennar Foundation Cancer Center",
+          "city": "Irvine",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "University of California San Diego Health",
+          "city": "La Jolla",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Antelope Valley",
+          "city": "Lancaster",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Long Beach Elm",
+          "city": "Long Beach",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Cancer and Blood Specialty Clinic",
+          "city": "Los Alamitos",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "USC Norris Comprehensive Cancer Center",
+          "city": "Los Angeles",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Cedars Sinai Medical Center",
+          "city": "Los Angeles",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Valkyrie Clinical Trials",
+          "city": "Los Angeles",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Valkyrie Clinical Trials Murrieta",
+          "city": "Murrieta",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Kaiser Permanente Oakland Medical Center",
+          "city": "Oakland",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "St. Joseph Hospital Center for Cancer Prevention and Treatment",
+          "city": "Orange",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "University of California Irvine",
+          "city": "Orange",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Sutter Health Palo Alto Medical Foundation",
+          "city": "Palo Alto",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Kaiser Permanente Roseville Medical Center",
+          "city": "Roseville",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "UC Davis Comprehensive Cancer Center",
+          "city": "Sacramento",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Sutter Institute for Medical Research",
+          "city": "Sacramento",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "California Pacific Medical Center",
+          "city": "San Francisco",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Kaiser Permanente San Francisco Medical Center",
+          "city": "San Francisco",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "UCSF Zuckerberg San Francisco General Hospital",
+          "city": "San Francisco",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Sansum Clinic",
+          "city": "Santa Barbara",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Kaiser Permanente Santa Clara Medical Center",
+          "city": "Santa Clara",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Providence Medical Foundation 1",
+          "city": "Santa Rosa",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope South Pasadena",
+          "city": "South Pasadena",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Upland",
+          "city": "Upland",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Kaiser Permanente Northern California",
+          "city": "Vallejo",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "Kaiser Permanente Walnut Creek Medical Center",
+          "city": "Walnut Creek",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "John Muir Health Clinical Research Center",
+          "city": "Walnut Creek",
+          "state": "California",
+          "country": "United States"
+        },
+        {
+          "facility": "National Jewish Health",
+          "city": "Denver",
+          "state": "Colorado",
+          "country": "United States"
+        },
+        {
+          "facility": "Saint Josephs Hospital Cancer Centers of Colorado",
+          "city": "Denver",
+          "state": "Colorado",
+          "country": "United States"
+        },
+        {
+          "facility": "Lutheran Hospital Cancer Centers of Colorado",
+          "city": "Golden",
+          "state": "Colorado",
+          "country": "United States"
+        },
+        {
+          "facility": "Rocky Mountain Cancer Centers",
+          "city": "Lone Tree",
+          "state": "Colorado",
+          "country": "United States"
+        },
+        {
+          "facility": "Yale New Haven Hospital Yale Cancer Center",
+          "city": "New Haven",
+          "state": "Connecticut",
+          "country": "United States"
+        },
+        {
+          "facility": "ChristianaCare Helen F Graham Cancer Center and Research Institute",
+          "city": "Newark",
+          "state": "Delaware",
+          "country": "United States"
+        },
+        {
+          "facility": "MedStar Georgetown University Hospital",
+          "city": "Washington D.C.",
+          "state": "District of Columbia",
+          "country": "United States"
+        },
+        {
+          "facility": "Washington DC VA Medical Center",
+          "city": "Washington D.C.",
+          "state": "District of Columbia",
+          "country": "United States"
+        },
+        {
+          "facility": "Baptist Lynn Cancer Institute",
+          "city": "Boca Raton",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "The Oncology Institute of Hope and Innovation 1",
+          "city": "Fort Lauderdale",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Florida Cancer Specialists",
+          "city": "Fort Myers",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Univ of Florida",
+          "city": "Gainesville",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Baptist MD Anderson Cancer Center",
+          "city": "Jacksonville",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Mayo Clinic",
+          "city": "Jacksonville",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Sylvester Comprehensive Cancer Center",
+          "city": "Miami",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Baptist Health Miami Cancer Institute",
+          "city": "Miami",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "AdventHealth Orlando",
+          "city": "Orlando",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Orlando Health Cancer Institute",
+          "city": "Orlando",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Florida Cancer Specialists & Research Institute 1",
+          "city": "St. Petersburg",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Moffitt Cancer Center",
+          "city": "Tampa",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "Florida Cancer Specialists & Research Institute",
+          "city": "West Palm Beach",
+          "state": "Florida",
+          "country": "United States"
+        },
+        {
+          "facility": "University Cancer And Blood Center LLC",
+          "city": "Athens",
+          "state": "Georgia",
+          "country": "United States"
+        },
+        {
+          "facility": "Grady Health System Correll Pavilion",
+          "city": "Atlanta",
+          "state": "Georgia",
+          "country": "United States"
+        },
+        {
+          "facility": "Piedmont Healthcare",
+          "city": "Atlanta",
+          "state": "Georgia",
+          "country": "United States"
+        },
+        {
+          "facility": "Piedmont Cancer Institute",
+          "city": "Atlanta",
+          "state": "Georgia",
+          "country": "United States"
+        },
+        {
+          "facility": "Winship Cancer Institute Emory University",
+          "city": "Atlanta",
+          "state": "Georgia",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Cancer Center",
+          "city": "Newnan",
+          "state": "Georgia",
+          "country": "United States"
+        },
+        {
+          "facility": "Rush University Medical Center Rush University Cancer Center Chicago",
+          "city": "Chicago",
+          "state": "Illinois",
+          "country": "United States"
+        },
+        {
+          "facility": "University of Illinois at Chicago",
+          "city": "Chicago",
+          "state": "Illinois",
+          "country": "United States"
+        },
+        {
+          "facility": "Cancer Care Specialists of Central Illinois",
+          "city": "Decatur",
+          "state": "Illinois",
+          "country": "United States"
+        },
+        {
+          "facility": "Hope and Healing Cancer Services",
+          "city": "Hinsdale",
+          "state": "Illinois",
+          "country": "United States"
+        },
+        {
+          "facility": "Illinois Cancer Specialists",
+          "city": "Niles",
+          "state": "Illinois",
+          "country": "United States"
+        },
+        {
+          "facility": "Illinois CancerCare",
+          "city": "Peoria",
+          "state": "Illinois",
+          "country": "United States"
+        },
+        {
+          "facility": "City of Hope Chicago",
+          "city": "Zion",
+          "state": "Illinois",
+          "country": "United States"
+        },
+        {
+          "facility": "Fort Wayne Medical Oncology and Hematology",
+          "city": "Fort Wayne",
+          "state": "Indiana",
+          "country": "United States"
+        },
+        {
+          "facility": "Investigative Clinical Research of Indiana, LLC",
+          "city": "Noblesville",
+          "state": "Indiana",
+          "country": "United States"
+        },
+        {
+          "facility": "Accellacare of McFarland",
+          "city": "Ames",
+          "state": "Iowa",
+          "country": "United States"
+        },
+        {
+          "facility": "University of Kansas Cancer Center",
+          "city": "Fairway",
+          "state": "Kansas",
+          "country": "United States"
+        },
+        {
+          "facility": "University of Maryland",
+          "city": "Baltimore",
+          "state": "Maryland",
+          "country": "United States"
+        },
+        {
+          "facility": "Maryland Oncology Hematology P A",
+          "city": "Silver Spring",
+          "state": "Maryland",
+          "country": "United States"
+        },
+        {
+          "facility": "Boston University Medical Center",
+          "city": "Boston",
+          "state": "Massachusetts",
+          "country": "United States"
+        },
+        {
+          "facility": "Beth Israel Deaconess Medical Center",
+          "city": "Boston",
+          "state": "Massachusetts",
+          "country": "United States"
+        },
+        {
+          "facility": "Dana Farber Cancer Institute",
+          "city": "Boston",
+          "state": "Massachusetts",
+          "country": "United States"
+        },
+        {
+          "facility": "University of Michigan Health System",
+          "city": "Ann Arbor",
+          "state": "Michigan",
+          "country": "United States"
+        },
+        {
+          "facility": "Trinity Health St Joseph Mercy Ann Arbor",
+          "city": "Ypsilanti",
+          "state": "Michigan",
+          "country": "United States"
+        },
+        {
+          "facility": "University Of Minnesota",
+          "city": "Minneapolis",
+          "state": "Minnesota",
+          "country": "United States"
+        },
+        {
+          "facility": "Mayo Clinic Rochester",
+          "city": "Rochester",
+          "state": "Minnesota",
+          "country": "United States"
+        },
+        {
+          "facility": "Jackson Oncology Associates",
+          "city": "Jackson",
+          "state": "Mississippi",
+          "country": "United States"
+        },
+        {
+          "facility": "Truman Medical Ctr West",
+          "city": "Kansas City",
+          "state": "Missouri",
+          "country": "United States"
+        },
+        {
+          "facility": "Oncology Hematology Associates",
+          "city": "Springfield",
+          "state": "Missouri",
+          "country": "United States"
+        },
+        {
+          "facility": "Washington University School Of Medicine",
+          "city": "St Louis",
+          "state": "Missouri",
+          "country": "United States"
+        },
+        {
+          "facility": "Dartmouth Hitchcock Medical Center",
+          "city": "Lebanon",
+          "state": "New Hampshire",
+          "country": "United States"
+        },
+        {
+          "facility": "Hunterdon Hematology Oncology",
+          "city": "Flemington",
+          "state": "New Jersey",
+          "country": "United States"
+        },
+        {
+          "facility": "Morristown Medical Center",
+          "city": "Morristown",
+          "state": "New Jersey",
+          "country": "United States"
+        },
+        {
+          "facility": "Rutgers Cancer Institute of New Jersey",
+          "city": "New Brunswick",
+          "state": "New Jersey",
+          "country": "United States"
+        },
+        {
+          "facility": "Overlook Medical Center",
+          "city": "Summit",
+          "state": "New Jersey",
+          "country": "United States"
+        },
+        {
+          "facility": "Holy Name Medical Center",
+          "city": "Teaneck",
+          "state": "New Jersey",
+          "country": "United States"
+        },
+        {
+          "facility": "University of New Mexico",
+          "city": "Albuquerque",
+          "state": "New Mexico",
+          "country": "United States"
+        },
+        {
+          "facility": "Hematology-Oncology Associates of CNY",
+          "city": "East Syracuse",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "Laura & Isaac Perlmutter Cancer Center at NYU Langone Hospital - Long Island",
+          "city": "Mineola",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "NYU Langone Health Laura and Isaac Perlmutter Cancer Center",
+          "city": "New York",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "Herbert Irving Comprehensive Cancer Center Columbia University Medical Center",
+          "city": "New York",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "Ellis Hospital",
+          "city": "Schenectady",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "New York Cancer and Blood Specialists",
+          "city": "Shirley",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "Montefiore Medical Center",
+          "city": "The Bronx",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "Clinical Research Alliance Inc",
+          "city": "Westbury",
+          "state": "New York",
+          "country": "United States"
+        },
+        {
+          "facility": "Atrium Health",
+          "city": "Charlotte",
+          "state": "North Carolina",
+          "country": "United States"
+        },
+        {
+          "facility": "Duke University Medical Center",
+          "city": "Durham",
+          "state": "North Carolina",
+          "country": "United States"
+        },
+        {
+          "facility": "Regional Medical Oncology Center",
+          "city": "Wilson",
+          "state": "North Carolina",
+          "country": "United States"
+        },
+        {
+          "facility": "Atrium Health Wake Forest Baptist Comprehensive Cancer Center",
+          "city": "Winston-Salem",
+          "state": "North Carolina",
+          "country": "United States"
+        },
+        {
+          "facility": "University of Cincinnati",
+          "city": "Cincinnati",
+          "state": "Ohio",
+          "country": "United States"
+        },
+        {
+          "facility": "Cincinnati Veterans Affairs Medical Center",
+          "city": "Cincinnati",
+          "state": "Ohio",
+          "country": "United States"
+        },
+        {
+          "facility": "Oncology Associates of Oregon PC Willamette Valley Cancer Institute",
+          "city": "Eugene",
+          "state": "Oregon",
+          "country": "United States"
+        },
+        {
+          "facility": "Oregon Health And Science University",
+          "city": "Portland",
+          "state": "Oregon",
+          "country": "United States"
+        },
+        {
+          "facility": "Lankenau Institute for Medical Research Main Line Health Bryn Mawr Hospital",
+          "city": "Bryn Mawr",
+          "state": "Pennsylvania",
+          "country": "United States"
+        },
+        {
+          "facility": "Lankenau Institute for Medical Research Main Line Health Paoli Hospital",
+          "city": "Paoli",
+          "state": "Pennsylvania",
+          "country": "United States"
+        },
+        {
+          "facility": "Philadelphia VA Medical Center",
+          "city": "Philadelphia",
+          "state": "Pennsylvania",
+          "country": "United States"
+        },
+        {
+          "facility": "Thomas Jefferson University Hospital",
+          "city": "Philadelphia",
+          "state": "Pennsylvania",
+          "country": "United States"
+        },
+        {
+          "facility": "Jefferson Health Northeast",
+          "city": "Philadelphia",
+          "state": "Pennsylvania",
+          "country": "United States"
+        },
+        {
+          "facility": "McGlinn Cancer Institute Reading Hospital",
+          "city": "West Reading",
+          "state": "Pennsylvania",
+          "country": "United States"
+        },
+        {
+          "facility": "Lankenau Institute for Medical Research",
+          "city": "Wynnewood",
+          "state": "Pennsylvania",
+          "country": "United States"
+        },
+        {
+          "facility": "Medical University of South Carolina",
+          "city": "Charleston",
+          "state": "South Carolina",
+          "country": "United States"
+        },
+        {
+          "facility": "Avera Medical Group",
+          "city": "Sioux Falls",
+          "state": "South Dakota",
+          "country": "United States"
+        },
+        {
+          "facility": "Tennessee Oncology - Chattanooga",
+          "city": "Chattanooga",
+          "state": "Tennessee",
+          "country": "United States"
+        },
+        {
+          "facility": "Tennessee Cancer Specialists",
+          "city": "Knoxville",
+          "state": "Tennessee",
+          "country": "United States"
+        },
+        {
+          "facility": "University of Tennessee",
+          "city": "Knoxville",
+          "state": "Tennessee",
+          "country": "United States"
+        },
+        {
+          "facility": "Baptist Cancer Center",
+          "city": "Memphis",
+          "state": "Tennessee",
+          "country": "United States"
+        },
+        {
+          "facility": "SCRI Oncology Partners",
+          "city": "Nashville",
+          "state": "Tennessee",
+          "country": "United States"
+        },
+        {
+          "facility": "Tennessee Oncology",
+          "city": "Nashville",
+          "state": "Tennessee",
+          "country": "United States"
+        },
+        {
+          "facility": "Texas Oncology South",
+          "city": "Austin",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Parkland Health and Hospital System",
+          "city": "Dallas",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Texas Oncology DFW",
+          "city": "Dallas",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "UT Southwestern Medical Center",
+          "city": "Dallas",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Renovatio Clinical",
+          "city": "El Paso",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "JPS Health Network",
+          "city": "Fort Worth",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "MD Anderson Cancer Center",
+          "city": "Houston",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Oncology Consultants Texas",
+          "city": "Houston",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Community Clinical Trials",
+          "city": "Kingwood",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Texas Oncology Odessa-West Texas Cancer Center",
+          "city": "Odessa",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Texas Oncology San Antonio Northeast",
+          "city": "San Antonio",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Renovatio Clinical 1",
+          "city": "The Woodlands",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "The University of Texas Health Science Center at Tyler",
+          "city": "Tyler",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Texas Oncology - Northeast",
+          "city": "Tyler",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Texas Oncology-Gulf Coast",
+          "city": "Webster",
+          "state": "Texas",
+          "country": "United States"
+        },
+        {
+          "facility": "Huntsman Cancer Institute",
+          "city": "Salt Lake City",
+          "state": "Utah",
+          "country": "United States"
+        },
+        {
+          "facility": "Virginia Cancer Specialists",
+          "city": "Fairfax",
+          "state": "Virginia",
+          "country": "United States"
+        },
+        {
+          "facility": "Vista Oncology",
+          "city": "Olympia",
+          "state": "Washington",
+          "country": "United States"
+        },
+        {
+          "facility": "Summit Cancer Centers",
+          "city": "Spokane",
+          "state": "Washington",
+          "country": "United States"
+        },
+        {
+          "facility": "Northwest Cancer Specialists - Vancouver",
+          "city": "Vancouver",
+          "state": "Washington",
+          "country": "United States"
+        },
+        {
+          "facility": "Ziekenhuis Oost-Limburg",
+          "city": "Genk",
+          "state": "",
+          "country": "Belgium"
+        },
+        {
+          "facility": "Ghent University Hospital",
+          "city": "Ghent",
+          "state": "",
+          "country": "Belgium"
+        },
+        {
+          "facility": "Universitair Ziekenhuis Leuven",
+          "city": "Leuven",
+          "state": "",
+          "country": "Belgium"
+        },
+        {
+          "facility": "CHU UCL Namur - Site Godinne",
+          "city": "Yvoir",
+          "state": "",
+          "country": "Belgium"
+        },
+        {
+          "facility": "Helsinki University Hospital",
+          "city": "Helsinki",
+          "state": "",
+          "country": "Finland"
+        },
+        {
+          "facility": "Oulu University Hospital",
+          "city": "Oulu",
+          "state": "",
+          "country": "Finland"
+        },
+        {
+          "facility": "Turku University Hospital",
+          "city": "Turku",
+          "state": "",
+          "country": "Finland"
+        },
+        {
+          "facility": "CHU de Brest - Hopital de la Cavale Blanche",
+          "city": "Brest",
+          "state": "",
+          "country": "France"
+        },
+        {
+          "facility": "CHU de Grenoble",
+          "city": "La Tronche",
+          "state": "",
+          "country": "France"
+        },
+        {
+          "facility": "Assistance Publique Hopitaux de Marseille (AP-HM) - Hopital",
+          "city": "Marseille",
+          "state": "",
+          "country": "France"
+        },
+        {
+          "facility": "I.C.O. Rene Gauducheau",
+          "city": "Saint-Herblain",
+          "state": "",
+          "country": "France"
+        },
+        {
+          "facility": "St. Elisabeth Hospital Leipzig",
+          "city": "Leipzig",
+          "state": "",
+          "country": "Germany"
+        },
+        {
+          "facility": "Klinikum der Universitaet Muenchen",
+          "city": "München",
+          "state": "",
+          "country": "Germany"
+        },
+        {
+          "facility": "Henry Dunant Hospital Center",
+          "city": "Athens",
+          "state": "",
+          "country": "Greece"
+        },
+        {
+          "facility": "Thoracic General Hospital Of Athens I Sotiria",
+          "city": "Athens",
+          "state": "",
+          "country": "Greece"
+        },
+        {
+          "facility": "Metaxa Cancer Center Hospital Of Piraeus",
+          "city": "Piraeus",
+          "state": "",
+          "country": "Greece"
+        },
+        {
+          "facility": "Anticancer Hospital of Thessaloniki Theageneio",
+          "city": "Thessaloniki",
+          "state": "",
+          "country": "Greece"
+        },
+        {
+          "facility": "Athens Medical Center S A Interbalkan Medical Center of Thessaloniki",
+          "city": "Thessaloniki",
+          "state": "",
+          "country": "Greece"
+        },
+        {
+          "facility": "Soroka Medical Center",
+          "city": "Beersheba",
+          "state": "",
+          "country": "Israel"
+        },
+        {
+          "facility": "Rambam Medical Center",
+          "city": "Haifa",
+          "state": "",
+          "country": "Israel"
+        },
+        {
+          "facility": "Meir Medical Center",
+          "city": "Kfar Saba",
+          "state": "",
+          "country": "Israel"
+        },
+        {
+          "facility": "Sheba Medical Center",
+          "city": "Ramat Gan",
+          "state": "",
+          "country": "Israel"
+        },
+        {
+          "facility": "Istituto Oncologico Veneto - IRCCS",
+          "city": "Padova",
+          "state": "",
+          "country": "Italy"
+        },
+        {
+          "facility": "Ospedale S. Maria Delle Croci",
+          "city": "Ravenna",
+          "state": "",
+          "country": "Italy"
+        },
+        {
+          "facility": "Fondazione Policlinico Universitario A Gemelli IRCCS",
+          "city": "Roma",
+          "state": "",
+          "country": "Italy"
+        },
+        {
+          "facility": "Istituto Clinico Humanitas",
+          "city": "Rozzano",
+          "state": "",
+          "country": "Italy"
+        },
+        {
+          "facility": "Centrum Onkologii im Prof F Lukaszczyka",
+          "city": "Bydgoszcz",
+          "state": "",
+          "country": "Poland"
+        },
+        {
+          "facility": "Uniwersyteckie Centrum Kliniczne",
+          "city": "Gdansk",
+          "state": "",
+          "country": "Poland"
+        },
+        {
+          "facility": "Warminsko-Mazurskie Centrum Chorob Pluc w Olsztynie",
+          "city": "Olsztyn",
+          "state": "",
+          "country": "Poland"
+        },
+        {
+          "facility": "Narodowy Instytut Onkologii im Marii Sklodowskiej Curie Panstwowy Instytut Badawczy",
+          "city": "Warsaw",
+          "state": "",
+          "country": "Poland"
+        },
+        {
+          "facility": "Uls Braga - Hosp. Braga",
+          "city": "Braga",
+          "state": "",
+          "country": "Portugal"
+        },
+        {
+          "facility": "Uls Alto Ave - Hosp. Sra. Da Oliveira Guimaraes",
+          "city": "Guimarães",
+          "state": "",
+          "country": "Portugal"
+        },
+        {
+          "facility": "Hosp. Cuf Tejo",
+          "city": "Lisbon",
+          "state": "",
+          "country": "Portugal"
+        },
+        {
+          "facility": "Uls Loures Odivelas - Hosp. Loures",
+          "city": "Loures",
+          "state": "",
+          "country": "Portugal"
+        },
+        {
+          "facility": "Ipo Porto",
+          "city": "Porto",
+          "state": "",
+          "country": "Portugal"
+        },
+        {
+          "facility": "Uls Gaia Espinho",
+          "city": "Vila Nova de Gaia",
+          "state": "",
+          "country": "Portugal"
+        },
+        {
+          "facility": "Auxilio Mutuo Cancer Center",
+          "city": "San Juan",
+          "state": "",
+          "country": "Puerto Rico"
+        },
+        {
+          "facility": "Hosp Univ Vall D Hebron",
+          "city": "Barcelona",
+          "state": "",
+          "country": "Spain"
+        },
+        {
+          "facility": "Hosp. de Jerez de La Frontera",
+          "city": "Jerez de la Frontera",
+          "state": "",
+          "country": "Spain"
+        },
+        {
+          "facility": "Hosp. Univ. 12 de Octubre",
+          "city": "Madrid",
+          "state": "",
+          "country": "Spain"
+        },
+        {
+          "facility": "Hosp. Clinico Univ. de Santiago",
+          "city": "Santiago de Compostela",
+          "state": "",
+          "country": "Spain"
+        },
+        {
+          "facility": "Hosp. Univ. I Politecni La Fe",
+          "city": "Valencia",
+          "state": "",
+          "country": "Spain"
+        },
+        {
+          "facility": "Guy's and St Thomas' NHS Foundation Trust",
+          "city": "Greater London",
+          "state": "",
+          "country": "United Kingdom"
+        },
+        {
+          "facility": "The Clatterbridge Cancer Centre NHS Foundation Trust",
+          "city": "Liverpool",
+          "state": "",
+          "country": "United Kingdom"
+        },
+        {
+          "facility": "Royal Marsden Hospital 1",
+          "city": "London",
+          "state": "",
+          "country": "United Kingdom"
+        },
+        {
+          "facility": "The Christie NHS Foundation Trust Christie Hospital",
+          "city": "Manchester",
+          "state": "",
+          "country": "United Kingdom"
+        },
+        {
+          "facility": "Royal Marsden Hospital",
+          "city": "Sutton",
+          "state": "",
+          "country": "United Kingdom"
+        },
+        {
+          "facility": "Torbay Hospital-Devon",
+          "city": "Torquay",
+          "state": "",
+          "country": "United Kingdom"
+        }
+      ],
+      "final_score": 70.2,
+      "eligibility_score": 65,
+      "logistics_score": 92,
+      "quality_score": 65,
+      "nearest_site_miles": 0,
+      "eligibility_breakdown": [
+        {
+          "criterion_text": "Histologically or cytologically confirmed advanced or metastatic NSCLC",
+          "type": "inclusion",
+          "verdict": "PASS",
+          "reason": "Patient has a diagnosis of Stage IIIB NSCLC.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "EGFR mutation must be Ex19del or Ex21 L858R",
+          "type": "inclusion",
+          "verdict": "PASS",
+          "reason": "Patient is positive for EGFR exon 19 deletion.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "At least 1 measurable lesion per RECIST v1.1",
+          "type": "inclusion",
+          "verdict": "UNCERTAIN",
+          "reason": "Patient profile does not contain information regarding measurable lesions.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "Prior toxicities resolved to NCI-CTCAE v5.0 grade <= 1 or baseline",
+          "type": "inclusion",
+          "verdict": "UNCERTAIN",
+          "reason": "Patient profile does not contain information regarding resolution of prior toxicities.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "ECOG performance status 0 or 1",
+          "type": "inclusion",
+          "verdict": "PASS",
+          "reason": "Patient has an ECOG score of 1.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "Active interstitial lung disease (ILD)",
+          "type": "exclusion",
+          "verdict": "PASS",
+          "reason": "No evidence of interstitial lung disease in patient profile.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "Major surgery within 4 weeks prior to first dose",
+          "type": "exclusion",
+          "verdict": "UNCERTAIN",
+          "reason": "Patient profile does not contain information regarding recent surgical history.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "Uncontrolled tumor-related pain",
+          "type": "exclusion",
+          "verdict": "UNCERTAIN",
+          "reason": "Patient profile does not contain information regarding tumor-related pain status.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "Received investigational treatment within 5 half-lives",
+          "type": "exclusion",
+          "verdict": "UNCERTAIN",
+          "reason": "Patient profile does not specify if prior treatments were investigational or their half-lives.",
+          "is_hard_stop": true
+        },
+        {
+          "criterion_text": "Prior or concurrent second malignancy",
+          "type": "exclusion",
+          "verdict": "PASS",
+          "reason": "No evidence of a second malignancy in patient profile.",
+          "is_hard_stop": true
+        }
+      ],
+      "patient_summary": "WHAT THIS TRIAL IS TESTING:\nThis study looks at two new drug combinations to see how well they shrink or control non-small cell lung cancer in people with specific genetic markers (EGFR mutations).\n\nWHY THIS MIGHT BE RIGHT FOR YOU:\n* Your specific lung cancer mutation (EGFR exon 19 deletion) is a direct match for what these drugs are designed to target.\n* You have already received some standard treatments, and this trial offers a different approach to managing your cancer.\n* The study is open to people with your stage of lung cancer who are looking for new options.\n\nWHAT WOULD BE INVOLVED:\nYou would receive either a combination of two targeted drugs (amivantamab and lazertinib) or one targeted drug plus chemotherapy. You will need to visit the study site regularly for treatments, check-ups, and scans to see how the medicine is working.\n\nIMPORTANT TO CONFIRM WITH YOUR DOCTOR:\nPlease ask your doctor if you meet the specific requirements for \"measurable lesions\" on your scans. Also, confirm that any side effects from your past chemotherapy have healed enough for you to start a new treatment. Finally, ensure you have not had major surgery in the last four weeks.",
+      "physician_brief": "**TRIAL:** NCT06667076; A Study of Amivantamab in Combination With Lazertinib or Chemotherapy for EGFR-Mutated NSCLC; Phase 2; Sponsor: Janssen.\n\n**CLINICAL RATIONALE:** Patient is a 58F with Stage IIIB EGFR Exon 19del+ NSCLC. Following progression on platinum-doublet therapy, this trial offers a targeted approach using the bispecific antibody amivantamab combined with the third-generation TKI lazertinib or chemotherapy, addressing the need for next-line EGFR-directed therapy.\n\n**KEY ELIGIBILITY:** \n*   **Confirmed:** Histology, EGFR Ex19del status, ECOG 1.\n*   **Uncertain:** Requires verification of RECIST v1.1 measurable disease, resolution of prior treatment toxicities to Grade ≤1, and absence of uncontrolled tumor-related pain.\n\n**LOGISTICS:** Site location TBD; requires frequent monitoring for infusion-related reactions and potential ILD.\n\n**RECOMMENDATION:** **Strong Match.** The patient’s molecular profile and prior treatment history align well with the trial’s focus on overcoming resistance in EGFR-mutated NSCLC.",
+      "outreach_email": "Subject: Inquiry regarding clinical trial NCT06667076\n\nDear Clinical Trial Coordinator,\n\nI am writing to express my interest in participating in the Phase 2 study of Amivantamab (NCT06667076). \n\nI am a patient currently residing in Boston, MA, diagnosed with Stage IIIB Non-Small Cell Lung Cancer. My tumor is EGFR exon 19 deletion positive with a PD-L1 expression of 40%. My prior treatment includes Carboplatin and Paclitaxel, and I currently maintain an ECOG performance status of 1.\n\nGiven my specific mutation profile and treatment history, I believe I may be a strong candidate for this trial. Could you please confirm if this study is currently enrolling new participants? If so, I would appreciate information regarding the next steps for pre-screening or the process for having my records reviewed.\n\nThank you for your time and for your work in advancing these therapies.\n\nSincerely,\n\n[Your Name]\n[Your Phone Number]"
+    },
+    "bookmarked_at": "2026-04-19T11:12:01Z"
+  }
+]

@@ -173,9 +173,12 @@ function appendToField(current, addition) {
   return val + ', ' + addition
 }
 
-export default function PatientForm({ onSubmit, loading }) {
-  const [form, setForm] = useState(DEFAULTS)
-  const [examples, setExamples] = useState([])
+export default function PatientForm({ onSubmit, loading, savedPatients = [], onSavePatient, onDeletePatient }) {
+  const [form,          setForm]          = useState(DEFAULTS)
+  const [examples,      setExamples]      = useState([])
+  const [showSaveInput, setShowSaveInput] = useState(false)
+  const [saveLabel,     setSaveLabel]     = useState('')
+  const [savingPatient, setSavingPatient] = useState(false)
 
   useEffect(() => {
     getExamples().then(d => setExamples(d.examples || [])).catch(() => {})
@@ -187,6 +190,23 @@ export default function PatientForm({ onSubmit, loading }) {
 
   const loadExample = ex => setForm({ ...DEFAULTS, ...ex.fields, labs: ex.fields.labs || [] })
 
+  const loadPatient = (patientId) => {
+    const p = savedPatients.find(p => p.patient_id === patientId)
+    if (p) setForm({ ...DEFAULTS, ...p.form_data, labs: p.form_data.labs || [] })
+  }
+
+  const handleSavePatient = async () => {
+    if (!saveLabel.trim()) return
+    setSavingPatient(true)
+    try {
+      await onSavePatient(saveLabel.trim(), { ...form, age: Number(form.age), ecog: Number(form.ecog) })
+      setSaveLabel('')
+      setShowSaveInput(false)
+    } finally {
+      setSavingPatient(false)
+    }
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     onSubmit({ ...form, age: Number(form.age), ecog: Number(form.ecog) })
@@ -196,6 +216,63 @@ export default function PatientForm({ onSubmit, loading }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-1 pb-4">
+
+      {/* ── Saved patients bar ── */}
+      <div className="mb-3 p-3 border border-[#e8e4de] bg-[#f9f8f5] space-y-2">
+        <div className="flex items-center justify-between">
+          <span className="data-label">Patient Records</span>
+          {!showSaveInput && (
+            <button type="button" onClick={() => { setShowSaveInput(true); setSaveLabel(form.diagnosis ? `${form.diagnosis}` : '') }}
+                    className="text-[10px] text-[#1a4f7a] hover:underline font-medium">
+              + Save current
+            </button>
+          )}
+        </div>
+
+        {savedPatients.length > 0 && (
+          <div className="flex gap-1.5 items-center">
+            <select
+              defaultValue=""
+              onChange={e => { if (e.target.value) loadPatient(e.target.value) }}
+              className="input text-xs flex-1"
+              style={{ borderRadius: 0, padding: '4px 8px' }}
+            >
+              <option value="">Load saved patient…</option>
+              {savedPatients.map(p => (
+                <option key={p.patient_id} value={p.patient_id}>{p.label}</option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {showSaveInput && (
+          <div className="flex gap-1.5 items-center">
+            <input
+              autoFocus
+              className="input text-xs flex-1"
+              style={{ borderRadius: 0, padding: '4px 8px' }}
+              placeholder="Label e.g. Jane — NSCLC Stage IIIB"
+              value={saveLabel}
+              onChange={e => setSaveLabel(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); handleSavePatient() } if (e.key === 'Escape') setShowSaveInput(false) }}
+            />
+            <button type="button" onClick={handleSavePatient} disabled={!saveLabel.trim() || savingPatient}
+                    className="text-[11px] px-2 py-1 border font-medium transition-colors disabled:opacity-40"
+                    style={{ borderRadius: 0, borderColor: '#1a4f7a', color: '#1a4f7a', background: '#eef3f8' }}>
+              {savingPatient ? '…' : 'Save'}
+            </button>
+            <button type="button" onClick={() => setShowSaveInput(false)}
+                    className="text-[11px] px-2 py-1 border border-[#dedad4] text-[#9b9b9b] hover:text-[#1a1a1a] transition-colors"
+                    style={{ borderRadius: 0 }}>
+              ✕
+            </button>
+          </div>
+        )}
+
+        {savedPatients.length === 0 && !showSaveInput && (
+          <p className="text-[11px] text-[#c0bbb4]">No saved patients yet. Fill the form and save.</p>
+        )}
+      </div>
 
       {/* Examples */}
       {examples.length > 0 && (

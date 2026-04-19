@@ -2,72 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  * { font-family: 'Inter', system-ui, sans-serif; }
+  .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+  .font-mono  { font-family: 'JetBrains Mono', 'Courier New', monospace; }
+
+  body {
+    background: #f7f6f2;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar       { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #dedad4; border-radius: 2px; }
+}
+
 @layer components {
+
   /* ── Buttons ── */
   .btn-primary {
-    @apply w-full py-3 px-4 rounded-xl bg-slate-800 text-white font-semibold text-sm
-           hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors;
+    @apply w-full py-3 px-4 bg-[#1a1a1a] text-white font-semibold text-xs
+           uppercase tracking-widest hover:bg-[#333] disabled:opacity-30
+           disabled:cursor-not-allowed transition-colors;
+    border-radius: 0;
   }
   .btn-ghost {
-    @apply text-sm text-slate-500 hover:text-slate-700 font-medium transition-colors;
+    @apply text-xs text-[#6b6b6b] hover:text-[#1a1a1a] font-medium transition-colors
+           border border-[#dedad4] hover:border-[#c5c0b8] px-3 py-1.5;
+    border-radius: 0;
   }
 
   /* ── Alerts ── */
   .alert-amber {
-    @apply bg-amber-50 border border-amber-200 text-amber-800 rounded-xl px-4 py-3 text-sm;
+    @apply border border-[#c9a227] bg-[#fffbf0] text-[#7d4e00] px-4 py-3 text-sm;
   }
   .alert-red {
-    @apply bg-red-50 border border-red-200 text-red-800 rounded-xl px-4 py-3 text-sm;
+    @apply border border-[#c97b7b] bg-[#fff5f5] text-[#8b1a1a] px-4 py-3 text-sm;
   }
 
-  /* ── Form ── */
+  /* ── Form sections ── */
   .section-card {
-    @apply bg-white rounded-2xl border border-slate-100 shadow-sm p-4 mb-3;
+    @apply bg-white border border-[#e8e4de] p-4 mb-3;
+    border-radius: 0;
   }
   .section-header {
-    @apply flex items-center gap-3 mb-3;
+    @apply flex items-center gap-2 mb-3 pb-2 border-b border-[#f0ece6];
   }
   .section-icon {
-    @apply w-8 h-8 rounded-lg flex items-center justify-center text-base flex-shrink-0;
+    @apply w-5 h-5 flex items-center justify-center text-sm flex-shrink-0;
   }
   .section-title-text {
-    @apply text-sm font-bold text-slate-700;
+    @apply text-[10px] font-semibold text-[#6b6b6b] uppercase tracking-[0.15em];
   }
   .section-subtitle {
-    @apply text-xs text-slate-400 mt-0.5;
+    @apply text-[11px] text-[#9b9b9b] mt-0.5;
   }
+
+  /* ── Form inputs ── */
   .label {
-    @apply block text-xs font-semibold text-slate-600 mb-1;
+    @apply block text-[10px] font-semibold text-[#6b6b6b] mb-1 uppercase tracking-[0.12em];
   }
   .hint {
-    @apply text-[11px] text-slate-400 mt-1;
+    @apply text-[11px] text-[#9b9b9b] mt-1;
   }
   .input {
-    @apply w-full rounded-lg border text-sm px-3 py-2 outline-none transition-colors
-           focus:ring-2 focus:ring-offset-0 bg-white;
+    @apply w-full border border-[#dedad4] text-sm px-3 py-2 outline-none
+           bg-white text-[#1a1a1a] placeholder:text-[#c0bbb4]
+           focus:border-[#1a4f7a] focus:ring-0 transition-colors;
+    border-radius: 0;
   }
-  .input-indigo {
-    @apply border-slate-200 focus:border-indigo-400 focus:ring-indigo-100;
-  }
-  .input-blue {
-    @apply border-slate-200 focus:border-blue-400 focus:ring-blue-100;
-  }
-  .input-amber {
-    @apply border-slate-200 focus:border-amber-400 focus:ring-amber-100;
-  }
-  .input-emerald {
-    @apply border-slate-200 focus:border-emerald-400 focus:ring-emerald-100;
-  }
-  .input-violet {
-    @apply border-slate-200 focus:border-violet-400 focus:ring-violet-100;
-  }
+  .input-indigo  { @apply focus:border-[#1a4f7a]; }
+  .input-blue    { @apply focus:border-[#1a4f7a]; }
+  .input-amber   { @apply focus:border-[#7d4e00]; }
+  .input-emerald { @apply focus:border-[#1a6b3c]; }
+  .input-violet  { @apply focus:border-[#5b2d8e]; }
 
   /* ── Chips ── */
   .chip {
-    @apply px-2 py-1 rounded-md text-[11px] font-medium border transition-colors cursor-pointer;
+    @apply px-2.5 py-1 text-[11px] font-medium border transition-colors cursor-pointer;
+    border-radius: 0;
   }
-  .chip-blue   { @apply bg-blue-50 text-blue-600 border-blue-100 hover:bg-blue-100; }
-  .chip-amber  { @apply bg-amber-50 text-amber-600 border-amber-100 hover:bg-amber-100; }
-  .chip-emerald{ @apply bg-emerald-50 text-emerald-600 border-emerald-100 hover:bg-emerald-100; }
-  .chip-violet { @apply bg-violet-50 text-violet-600 border-violet-100 hover:bg-violet-100; }
+  .chip-blue    { @apply bg-[#eef3f8] text-[#1a4f7a] border-[#c5d6e8] hover:bg-[#dae6f0]; }
+  .chip-amber   { @apply bg-[#fdf6e8] text-[#7d4e00] border-[#e8d5a0] hover:bg-[#f5e8c0]; }
+  .chip-emerald { @apply bg-[#eef6f0] text-[#1a6b3c] border-[#b8dfc5] hover:bg-[#d5edde]; }
+  .chip-violet  { @apply bg-[#f3eef8] text-[#5b2d8e] border-[#d0bde8] hover:bg-[#e5d8f5]; }
+
+  /* ── Utility ── */
+  .data-label {
+    @apply text-[10px] font-semibold text-[#9b9b9b] uppercase tracking-[0.15em];
+  }
+  .data-value {
+    @apply text-sm text-[#1a1a1a];
+  }
+  .section-rule {
+    @apply border-t border-[#e8e4de] my-4;
+  }
 }
