@@ -430,6 +430,8 @@ export default function App() {
     setPhase('running')
     setView('main')
     setLogs([])
+    setActiveStep(0)
+    setCurrentAgent(AGENT_LABELS[0])
     setResult(null)
     setActiveStep(0)
     setCompletedSteps(new Set())
