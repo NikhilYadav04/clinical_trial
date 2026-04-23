@@ -12,7 +12,7 @@ function ScoreBar({ label, value, color }) {
     <div className="flex items-center gap-3">
       <span className="text-[10px] text-[#9b9b9b] uppercase tracking-wider w-20 flex-shrink-0">{label}</span>
       <div className="flex-1 h-1 bg-[#e8e4de] relative">
-        <div className="absolute top-0 left-0 h-1 rounded-sm"
+        <div className="absolute top-0 left-0 h-1"
              style={{ width: `${Math.min(value || 0, 100)}%`, background: color }} />
       </div>
       <span className="font-mono text-[11px] text-[#4a4a4a] w-6 text-right">{Math.round(value || 0)}</span>

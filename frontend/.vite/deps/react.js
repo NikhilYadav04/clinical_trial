@@ -1,6 +1,5 @@
 import {
   require_react
-} from "./chunk-RDPJQGET.js";
-import "./chunk-BUSYA2B4.js";
+} from "./chunk-3X5I4BOS.js";
 export default require_react();
 //# sourceMappingURL=react.js.map

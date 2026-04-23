@@ -1,9 +1,7 @@
 import {
+  __commonJS,
   require_react
-} from "./chunk-RDPJQGET.js";
-import {
-  __commonJS
-} from "./chunk-BUSYA2B4.js";
+} from "./chunk-3X5I4BOS.js";
 
 // node_modules/scheduler/cjs/scheduler.production.min.js
 var require_scheduler_production_min = __commonJS({
@@ -6883,6 +6881,7 @@ var require_react_dom_production_min = __commonJS({
 // node_modules/react-dom/index.js
 var require_react_dom = __commonJS({
   "node_modules/react-dom/index.js"(exports, module) {
+    "use strict";
     function checkDCE() {
       if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") {
         return;
@@ -6905,9 +6904,36 @@ var require_react_dom = __commonJS({
   }
 });
 
-export {
-  require_react_dom
-};
+// node_modules/react-dom/client.js
+var require_client = __commonJS({
+  "node_modules/react-dom/client.js"(exports) {
+    var m = require_react_dom();
+    if (true) {
+      exports.createRoot = m.createRoot;
+      exports.hydrateRoot = m.hydrateRoot;
+    } else {
+      i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      exports.createRoot = function(c, o) {
+        i.usingClientEntryPoint = true;
+        try {
+          return m.createRoot(c, o);
+        } finally {
+          i.usingClientEntryPoint = false;
+        }
+      };
+      exports.hydrateRoot = function(c, h, o) {
+        i.usingClientEntryPoint = true;
+        try {
+          return m.hydrateRoot(c, h, o);
+        } finally {
+          i.usingClientEntryPoint = false;
+        }
+      };
+    }
+    var i;
+  }
+});
+export default require_client();
 /*! Bundled license information:
 
 scheduler/cjs/scheduler.production.min.js:
@@ -6932,4 +6958,4 @@ react-dom/cjs/react-dom.production.min.js:
    * LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=chunk-GC3JCWG5.js.map
+//# sourceMappingURL=react-dom_client.js.map

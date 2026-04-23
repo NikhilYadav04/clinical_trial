@@ -55,13 +55,20 @@ const LAB_CATEGORIES = [
   { label: 'Markers',items: [{ name: 'LDH', unit: 'U/L' }, { name: 'CEA', unit: 'ng/mL' }, { name: 'CA-125', unit: 'U/mL' }, { name: 'PSA', unit: 'ng/mL' }] },
 ]
 
+const SECTION_COLORS = {
+  indigo:  { accent: '#1a4f7a', iconBg: '#eef3f8' },
+  blue:    { accent: '#1a4f7a', iconBg: '#eef3f8' },
+  amber:   { accent: '#7d4e00', iconBg: '#fdf6e8' },
+  emerald: { accent: '#1a6b3c', iconBg: '#eef6f0' },
+  violet:  { accent: '#5b2d8e', iconBg: '#f3eef8' },
+}
+
 function SectionCard({ color, icon, title, subtitle, children }) {
-  const borders = { indigo: 'border-l-indigo-400', blue: 'border-l-blue-400', amber: 'border-l-amber-400', emerald: 'border-l-emerald-400', violet: 'border-l-violet-400' }
-  const icons   = { indigo: 'bg-indigo-50 text-indigo-500', blue: 'bg-blue-50 text-blue-500', amber: 'bg-amber-50 text-amber-500', emerald: 'bg-emerald-50 text-emerald-500', violet: 'bg-violet-50 text-violet-500' }
+  const c = SECTION_COLORS[color] || SECTION_COLORS.indigo
   return (
-    <div className={`section-card border-l-4 ${borders[color]}`}>
+    <div className="section-card" style={{ borderLeft: `3px solid ${c.accent}` }}>
       <div className="section-header">
-        <div className={`section-icon ${icons[color]}`}>{icon}</div>
+        <div className="section-icon" style={{ background: c.iconBg, color: c.accent }}>{icon}</div>
         <div>
           <div className="section-title-text">{title}</div>
           {subtitle && <div className="section-subtitle">{subtitle}</div>}
@@ -84,10 +91,10 @@ function Field({ label, hint, children }) {
 
 function CategorizedChips({ categories, color, onAdd }) {
   return (
-    <div className="mt-2 space-y-1.5 border-t border-slate-100 pt-2.5">
+    <div className="mt-2 space-y-1.5 border-t border-[#f0ece6] pt-2.5">
       {categories.map(cat => (
         <div key={cat.label} className="flex items-start gap-2">
-          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest w-14 flex-shrink-0 mt-1.5 text-right">{cat.label}</span>
+          <span className="text-[9px] font-bold text-[#9b9b9b] uppercase tracking-widest w-14 flex-shrink-0 mt-1.5 text-right">{cat.label}</span>
           <div className="flex flex-wrap gap-1">
             {cat.chips.map(chip => (
               <button key={chip} type="button" onClick={() => onAdd(chip)} className={`chip chip-${color}`}>
@@ -107,15 +114,16 @@ function PhaseToggle({ selected, onChange }) {
     <div className="flex gap-2 flex-wrap items-center">
       {PHASE_OPTIONS.map(p => (
         <button key={p} type="button" onClick={() => toggle(p)}
-          className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
+          style={{ borderRadius: 0 }}
+          className={`px-3 py-1.5 text-xs font-semibold border transition-all ${
             selected.includes(p)
-              ? 'bg-violet-600 text-white border-violet-600 shadow-sm'
-              : 'bg-white text-slate-600 border-slate-200 hover:border-violet-400 hover:text-violet-600'
+              ? 'bg-[#5b2d8e] text-white border-[#5b2d8e]'
+              : 'bg-white text-[#6b6b6b] border-[#dedad4] hover:border-[#5b2d8e] hover:text-[#5b2d8e]'
           }`}>
           {p}
         </button>
       ))}
-      {selected.length === 0 && <span className="text-[11px] text-slate-400">any phase accepted</span>}
+      {selected.length === 0 && <span className="text-[11px] text-[#9b9b9b]">any phase accepted</span>}
     </div>
   )
 }
@@ -126,7 +134,7 @@ function LabRow({ lab, index, onChange, onRemove }) {
       <input className="input input-emerald flex-1 text-xs" placeholder="Lab name" value={lab.name} onChange={e => onChange(index, 'name', e.target.value)} />
       <input className="input input-emerald w-20 text-xs" placeholder="Value" value={lab.value} onChange={e => onChange(index, 'value', e.target.value)} />
       <input className="input input-emerald w-20 text-xs" placeholder="Unit" value={lab.unit} onChange={e => onChange(index, 'unit', e.target.value)} />
-      <button type="button" onClick={() => onRemove(index)} className="text-slate-300 hover:text-red-400 text-lg leading-none">×</button>
+      <button type="button" onClick={() => onRemove(index)} className="text-[#c0bbb4] hover:text-[#8b1a1a] text-lg leading-none">×</button>
     </div>
   )
 }
@@ -146,14 +154,15 @@ function LabValuesSection({ labs, onChange }) {
           {labs.map((lab, i) => <LabRow key={i} lab={lab} index={i} onChange={updateLab} onRemove={removeLab} />)}
         </div>
       )}
-      <button type="button" onClick={() => addLab()} className="flex items-center gap-1.5 text-xs font-semibold text-emerald-600 hover:text-emerald-700 transition-colors">
-        <span className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-base leading-none">+</span>
+      <button type="button" onClick={() => addLab()}
+              className="flex items-center gap-1.5 text-xs font-semibold text-[#1a6b3c] hover:text-[#0f5730] transition-colors">
+        <span className="w-5 h-5 bg-[#eef6f0] border border-[#b8dfc5] flex items-center justify-center text-base leading-none">+</span>
         Add lab value
       </button>
-      <div className="border-t border-slate-100 pt-2.5 space-y-1.5">
+      <div className="border-t border-[#f0ece6] pt-2.5 space-y-1.5">
         {LAB_CATEGORIES.map(cat => (
           <div key={cat.label} className="flex items-start gap-2">
-            <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest w-14 flex-shrink-0 mt-1.5 text-right">{cat.label}</span>
+            <span className="text-[9px] font-bold text-[#9b9b9b] uppercase tracking-widest w-14 flex-shrink-0 mt-1.5 text-right">{cat.label}</span>
             <div className="flex flex-wrap gap-1">
               {cat.items.map(l => (
                 <button key={l.name} type="button" onClick={() => addLab(l.name, l.unit)} className="chip chip-emerald">+ {l.name}</button>
@@ -215,10 +224,10 @@ export default function PatientForm({ onSubmit, loading, savedPatients = [], onS
   const canSubmit = !loading && String(form.diagnosis).trim().length > 1 && form.age
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-1 pb-4">
+    <form onSubmit={handleSubmit} className="space-y-4 pb-4">
 
       {/* ── Saved patients bar ── */}
-      <div className="mb-3 p-3 border border-[#e8e4de] bg-[#f9f8f5] space-y-2">
+      <div className="p-3 border border-[#e8e4de] bg-[#f9f8f5] space-y-2">
         <div className="flex items-center justify-between">
           <span className="data-label">Patient Records</span>
           {!showSaveInput && (
@@ -276,13 +285,14 @@ export default function PatientForm({ onSubmit, loading, savedPatients = [], onS
 
       {/* Examples */}
       {examples.length > 0 && (
-        <div className="mb-4">
-          <p className="label mb-2">Load example patient</p>
-          <div className="flex flex-wrap gap-1.5">
+        <div>
+          <p className="label mb-2">Load Example Patient</p>
+          <div className="grid grid-cols-2 gap-1.5">
             {examples.map(ex => (
               <button key={ex.label} type="button" onClick={() => loadExample(ex)}
-                className="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-600
-                           border border-slate-200 hover:bg-slate-800 hover:text-white transition-all">
+                className="px-3 py-2 text-xs font-medium bg-[#f9f8f5] text-[#6b6b6b] text-left
+                           border border-[#e8e4de] hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a] transition-all"
+                style={{ borderRadius: 0 }}>
                 {ex.label}
               </button>
             ))}
@@ -362,12 +372,12 @@ export default function PatientForm({ onSubmit, loading, savedPatients = [], onS
         <div className="grid grid-cols-3 gap-2 items-end">
           <div className="col-span-2">
             <label className="label">
-              Max Travel — <span className="text-violet-600 font-bold normal-case tracking-normal">{form.max_travel} {form.travel_unit}</span>
+              Max Travel — <span className="font-bold normal-case tracking-normal" style={{ color: '#5b2d8e' }}>{form.max_travel} {form.travel_unit}</span>
             </label>
             <input type="range" min="0" max={form.travel_unit === 'km' ? 1000 : 500} step="25"
               value={form.max_travel} onChange={e => setVal('max_travel', Number(e.target.value))}
-              className="w-full accent-violet-600 mt-1" />
-            <div className="flex justify-between text-[10px] text-slate-300 mt-0.5">
+              className="w-full mt-1" style={{ accentColor: '#5b2d8e' }} />
+            <div className="flex justify-between text-[10px] text-[#c0bbb4] mt-0.5">
               <span>0</span><span>{form.travel_unit === 'km' ? '1000 km' : '500 mi'}</span>
             </div>
           </div>

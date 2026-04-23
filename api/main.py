@@ -147,6 +147,11 @@ def _build_result_payload(result: dict) -> dict:
 
 def _invoke_graph(patient_text: str) -> dict:
     from src.graph import app as langgraph_app
+    config = {
+        "run_name": "TrialMatch Pipeline",
+        "tags": ["trialmatch", "clinical-trial", "langgraph"],
+        "metadata": {"version": "1.0"},
+    }
     return langgraph_app.invoke({
         "raw_patient_input": patient_text,
         "patient_profile":   None,
@@ -155,7 +160,7 @@ def _invoke_graph(patient_text: str) -> dict:
         "ranked_trials":     [],
         "error":             None,
         "status_log":        [],
-    })
+    }, config=config)
 
 
 # ── Auth routes ───────────────────────────────────────────────────────────────
