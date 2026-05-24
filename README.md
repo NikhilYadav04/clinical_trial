@@ -15,6 +15,14 @@ An intelligent multi-agent system that matches patients to relevant clinical tri
 
 </div>
 
+<div align="center">
+
+| | |
+|:---:|:---:|
+| <img src="https://github.com/user-attachments/assets/839a4f5c-1d87-49ae-9caf-dfd5ea2f01c9" width="780" alt="Auth Screen"/> | <img src="https://github.com/user-attachments/assets/301ef09b-e665-4f1b-bb55-c03dfe7d9e25" width="780" alt="Home Screen"/> |
+| <img src="https://github.com/user-attachments/assets/eb8a48f3-0fa0-4a7c-9e39-6018fe3d8c70" width="780" alt="Pipeline Running"/> | <img src="https://github.com/user-attachments/assets/ba9dc636-2d6f-4033-b5e7-3ce984a03495" width="780" alt="Trial Results"/> |
+
+</div>
 ---
 
 ## The Problem
