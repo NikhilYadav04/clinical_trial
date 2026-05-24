@@ -7,7 +7,7 @@ and produces a per-criterion verdict for each trial.
 
 from langchain_core.messages import SystemMessage, HumanMessage
 from pydantic import BaseModel
-from src.utils.llm import get_llm
+from src.utils.llm import get_llm, extract_content
 from src.utils.retry import with_retry, call_with_timeout
 from typing import Literal
 import json
@@ -100,7 +100,7 @@ def check_eligibility(
 
     try:
         response = call_with_timeout(_invoke, timeout_seconds=120, label=nct_id)
-        content = response.content.strip()
+        content = extract_content(response).strip()
 
         if content.startswith("```"):
             content = content.split("```")[1]

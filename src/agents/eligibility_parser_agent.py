@@ -7,7 +7,7 @@ and extracts a structured checklist of inclusion and exclusion criteria.
 
 from langchain_core.messages import SystemMessage, HumanMessage
 from pydantic import BaseModel, Field
-from src.utils.llm import get_llm
+from src.utils.llm import get_llm, extract_content
 from src.utils.retry import with_retry, call_with_timeout
 from typing import Literal
 import json
@@ -74,7 +74,7 @@ def parse_eligibility_criteria(raw_criteria: str, nct_id: str) -> list[Eligibili
         print(f"  [Eligibility Parser] {nct_id} — timed out or failed after retries: {exc}")
         return []
 
-    content = response.content.strip()
+    content = extract_content(response).strip()
 
     if content.startswith("```"):
         content = content.split("```")[1]

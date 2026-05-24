@@ -16,6 +16,17 @@ import os
 from langchain_core.language_models.chat_models import BaseChatModel
 
 
+def extract_content(response) -> str:
+    """Extract text from an LLM response, handling both str and list content blocks."""
+    content = response.content
+    if isinstance(content, list):
+        return ''.join(
+            block.get('text', '') if isinstance(block, dict) else str(block)
+            for block in content
+        )
+    return str(content)
+
+
 def get_llm(temperature: float = 0, model: str = None) -> BaseChatModel:
     """
     Return a configured LLM instance based on LLM_PROVIDER env variable.

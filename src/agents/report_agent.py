@@ -7,7 +7,7 @@ Generates two outputs per top-matched trial:
   3. Outreach email draft    — to trial coordinator
 """
 
-from src.utils.llm import get_llm
+from src.utils.llm import get_llm, extract_content
 from src.utils.retry import with_retry, call_with_timeout
 from langchain_core.messages import SystemMessage, HumanMessage
 import json
@@ -59,10 +59,11 @@ def _call_llm(system_prompt: str, user_content: str) -> str:
     @with_retry(max_attempts=2, base_delay=2.0)
     def _invoke():
         llm = get_llm(temperature=0.3)
-        return llm.invoke([
+        response = llm.invoke([
             SystemMessage(content=system_prompt),
             HumanMessage(content=user_content),
-        ]).content.strip()
+        ])
+        return extract_content(response).strip()
 
     return call_with_timeout(_invoke, timeout_seconds=90, label="report_agent")
 

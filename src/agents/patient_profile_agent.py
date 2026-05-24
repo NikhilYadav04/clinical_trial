@@ -7,7 +7,7 @@ ready for trial matching.
 """
 
 from langchain_core.messages import SystemMessage, HumanMessage
-from src.utils.llm import get_llm
+from src.utils.llm import get_llm, extract_content
 from src.utils.retry import with_retry, call_with_timeout
 from src.state import GraphState, PatientProfile
 import json
@@ -85,7 +85,7 @@ def patient_profile_agent(state: GraphState) -> dict:
             "status_log": [f"ERROR in Patient Profile Agent: {error_msg}"],
         }
 
-    content = response.content.strip()
+    content = extract_content(response).strip()
 
     # Strip markdown code fences if LLM adds them
     if content.startswith("```"):
